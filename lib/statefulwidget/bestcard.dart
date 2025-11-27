@@ -27,26 +27,26 @@ class MyApp extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const Expanded(
-                    flex:7,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'title',
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.w800,
+                    const Expanded(
+                      flex:7,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'title',
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontWeight: FontWeight.w800,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 10.0),
-                        Text('description'),
-                      ],
+                          SizedBox(height: 10.0),
+                          Text('description'),
+                        ],
+                      ),
                     ),
-                  ),
 
-                
-                  const SelectableIcon(),
+                  
+                  const SelectableIcon(),//a widget instance — it creates an object from your custom widget class:
                 ],
               ),
             ),
@@ -61,7 +61,7 @@ class SelectableIcon extends StatefulWidget {
   const SelectableIcon({super.key});
 
   @override
-  State<SelectableIcon> createState() => _SelectableIconState();
+  State<SelectableIcon> createState() => _SelectableIconState();// createState is method and statefulwidget is class , and use state here so store the date
 }
 
 class _SelectableIconState extends State<SelectableIcon> {
@@ -71,12 +71,12 @@ class _SelectableIconState extends State<SelectableIcon> {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () {
-        setState(() {
-          isSelected = !isSelected;
+        setState(() { //to update the UI
+          isSelected = !isSelected; //flips the value
         });
       },
       icon: Icon(
-        isSelected ? Icons.favorite : Icons.favorite_border,
+        isSelected ? Icons.favorite : Icons.favorite_border, // ? : is a ternary operator meaning if-else
         color: isSelected ? Colors.red : Colors.grey,
       ),
     );

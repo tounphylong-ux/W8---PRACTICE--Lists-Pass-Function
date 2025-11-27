@@ -14,7 +14,7 @@ void main() => runApp(MaterialApp(
     ));
 
 class ImageGallery extends StatefulWidget {
-  const ImageGallery({super.key});
+  const ImageGallery({super.key}); 
 
   @override
   State<ImageGallery> createState() => _ImageGalleryState();
@@ -22,10 +22,10 @@ class ImageGallery extends StatefulWidget {
 
 class _ImageGalleryState extends State<ImageGallery> {
 
-  int _currentImageIndex = 0;
+  int _currentImageIndex = 0;// to keep track of the currently displayed image index
 
 
-  void _goToPreviousImage() {
+  void _goToPreviousImage() { //method to navigate to the previous image (Function to go to the previous image)
     setState(() {
       if (_currentImageIndex > 0) {
         _currentImageIndex--;
@@ -38,7 +38,7 @@ class _ImageGalleryState extends State<ImageGallery> {
 
   void _goToNextImage() {
     setState(() {
-      if (_currentImageIndex < images.length - 1) {
+      if (_currentImageIndex < images.length - 1) {//method to post to the next image (Function to Go to Next Image)
         _currentImageIndex++;
       } else {
 
@@ -57,7 +57,7 @@ class _ImageGalleryState extends State<ImageGallery> {
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.navigate_before),
-            tooltip: 'Go to the previous image',
+            tooltip: 'Go to the previous image', 
             onPressed: _goToPreviousImage,
           ),
           Padding(
@@ -65,7 +65,7 @@ class _ImageGalleryState extends State<ImageGallery> {
             child: IconButton(
               icon: const Icon(Icons.navigate_next),
               tooltip: 'Go to the next image',
-              onPressed: _goToNextImage,
+              onPressed: _goToNextImage, 
             ),
           ),
         ],
